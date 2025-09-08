@@ -27,11 +27,25 @@ P.S. Max pooling is not counted as a layer because it is not a learnable layer.
 [2] Co-adaptation: Situation when neurons/weights reply too much on specific other neurons to produce the correct output. Less robust netwoek because one neuron fails, others cannot compensate = lead to overfitting
 ## Pros & Cons
 
+Pros
+- A very good baseline for classification tasks
+
+Cons
+- 
+
 ## When to use
 
 ## Implementation
+- Framework: PyTorch
+- Dataset:
+- Colab Notebook: [link]()
 
 ## Results
+Training
+
+Validation
+
+Examples:
 
 ## References
 [ImageNet Classification with Deep Convolutional Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf) <br>
