@@ -13,7 +13,7 @@ The reason for using an 11 x 11 filter with stride 4 is to aggressively reduce t
 AlexNet used dual GPUs because running all 96 filters in the first convolutional layer on a single GPU exceeded its memory capacity. To solve this, a channel-wise split was applied, with each GPU computing 48 feature maps. The outputs were then merged before the fully connected layers, allowing the classifier to see all extracted features.
 
 P.S. Max pooling is not counted as a layer because it is not a learnable layer. <br>
-[1] Convolution window(receptive window) = region of the input image that the filter is looking at at one step <br>
+[1] Convolution window (= Receptive window) = region of the input image that the filter is looking at at one step <br>
 [2] Stride = number of pixels the convolutional filter moves (slides) each step across the input
 
 ## Key Achievements
