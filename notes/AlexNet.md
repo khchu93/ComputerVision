@@ -60,4 +60,4 @@ Examples:
 ## References
 [ImageNet Classification with Deep Convolutional Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf) <br>
 [alexnet](https://colab.research.google.com/github/d2l-ai/d2l-en-colab/blob/master/chapter_convolutional-modern/alexnet.ipynb#scrollTo=1a22e154) <br>
-[AlexNet Explained: A Step-by-Step Guide]([https://medium.com/@whyamit404/writing-alexnet-from-scratch-in-pytorch-15dfbf06fefc](https://levelup.gitconnected.com/alexnet-explained-a-step-by-step-guide-93870b45126b))
+[AlexNet Explained: A Step-by-Step Guide](https://levelup.gitconnected.com/alexnet-explained-a-step-by-step-guide-93870b45126b)
