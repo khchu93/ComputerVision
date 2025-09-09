@@ -44,18 +44,20 @@ Cons
 Educational or baseline for medium datasets only, as it is no longer suitable for modern high-accuracy projects.
 
 ## Implementation
-- Framework: PyTorch
-- Dataset:
-- Colab Notebook: [link]()
+- Framework: TensorFlow(From scratch), PyTorch(Pretrained)
+- Dataset: cats_vs_dogs
+- Colab Notebook: [link](https://colab.research.google.com/drive/19sW2rFfWYrlRkSCoN3JnilZYJnX_GFiv#scrollTo=kAVwFTkUiE6a)
 
+<!--
 ## Results
 Training
 
 Validation
 
 Examples:
+-->
 
 ## References
 [ImageNet Classification with Deep Convolutional Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf) <br>
 [alexnet](https://colab.research.google.com/github/d2l-ai/d2l-en-colab/blob/master/chapter_convolutional-modern/alexnet.ipynb#scrollTo=1a22e154) <br>
-[Writing AlexNet from Scratch in PyTorch](https://medium.com/@whyamit404/writing-alexnet-from-scratch-in-pytorch-15dfbf06fefc)
+[AlexNet Explained: A Step-by-Step Guide]([https://medium.com/@whyamit404/writing-alexnet-from-scratch-in-pytorch-15dfbf06fefc](https://levelup.gitconnected.com/alexnet-explained-a-step-by-step-guide-93870b45126b))
