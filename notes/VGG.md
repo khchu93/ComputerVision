@@ -9,6 +9,7 @@ There are two types of VGG: VGG16 and VGG19, with a different number of convolut
 The convolutional layers have a stride of 1 pixel and the padding of 1 pixel as well to preserve the spatial resolution of the input after convolution.
 Max pool is performed over a 2 x 2 pixel window, with a stride of 2.
 
+Number of parameters: over 138 million
 
 P.S.1. VGG stands for Visual Geometry Group.
 P.S.2. Local Response Normalization (LRN)[1] is not used as it increases memory usage and training time without increasing overall accuracy.
@@ -19,19 +20,22 @@ P.S.2. Local Response Normalization (LRN)[1] is not used as it increases memory 
   
 ## Key Achievements
 - Proposed a network of increasing depth using an architecture with very small receptive field (= convolution filter): 3 x 3
-    - A stack of very small conv. layer (without spatial pooling in between) has an effective receptive field of a large conv. layer (ex. A stack of two 3 x 3 = receptive field of 5 x 5, three 3 x 3 = receptive field of 7 x 7)
+    - A stack of very small conv. layer (without spatial pooling in between) has the same effective receptive field of a large conv. layer (ex. A stack of two 3 x 3 = receptive field of 5 x 5, three 3 x 3 = receptive field of 7 x 7)
     - With more rectification layers instead of a single one, the decision function becomes more discriminative
-    - Decreased the number of parameters while maintaining the same performance
+    - Decreased the number of parameters at the convolutional layers while maintaining the same performance (but it exploded in the fully connected layers)
         - three 3 x 3 has 3(3<sup>2</sup>C<sup>2</sup>) = 27C<sup>2</sup> weights
         - one 7 x 7 has 7<sup>2</sup>C = 49C weights
 
 ## Pros & Cons
 
 Pros
-- 
+- Deeper depth improves accuracy
+- Simple design
 
 Cons
-- 
+- Very slow to train due to its high number of parameters
+- takes up a lot of disk space and bandwidth due to its high number of weights/parameters
+- potential exploding gradient problem due to its high number of parameters
 
 ## When to use
 
