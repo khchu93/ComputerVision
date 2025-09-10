@@ -1,8 +1,13 @@
 # VGG
 
 ## Architecture
-There are two types of VGG: VGG16 and VGG19, with a different number of corresponding convolution layers.
+There are two types of VGG: VGG16 and VGG19, with a different number of convolution layers.
+![alt text](https://github.com/khchu93/NoteImage/blob/main/VGG.webp?raw=true) <br>
+[Image source](https://medium.com/@siddheshb008/vgg-net-architecture-explained-71179310050f)
 
+[VGG](https://arxiv.org/pdf/1409.1556) 16 is a 16-layer CNN model that consists of: 13 convolutional layers + 3 fully connected layers, ending with a softmax.
+The convolutional layers have a stride of 1 pixel and the padding of 1 pixel as well to preserve the spatial resolution of the input after convolution.
+Max pool is performed over a 2 x 2 pixel window, with a stride of 2.
 
 
 P.S. VGG stands for Visual Geometry Group
@@ -41,3 +46,4 @@ Examples:
 
 ## References
 [VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION](https://arxiv.org/pdf/1409.1556)
+[VGG-Net Architecture Explained](https://medium.com/@siddheshb008/vgg-net-architecture-explained-71179310050f)
