@@ -10,8 +10,13 @@ The convolutional layers have a stride of 1 pixel and the padding of 1 pixel as 
 Max pool is performed over a 2 x 2 pixel window, with a stride of 2.
 
 
-P.S. VGG stands for Visual Geometry Group
+P.S.1. VGG stands for Visual Geometry Group.
+P.S.2. Local Response Normalization (LRN)[1] is not used as it increases memory usage and training time without increasing overall accuracy.
 
+[[1]](https://prateekvjoshi.com/2016/04/05/what-is-local-response-normalization-in-convolutional-neural-networks/) Local Response Normalization (LRN) layer is a method that mimics a neurobiology concept called "lateral inhibition". This refers to the capacity of an excited neuron to subdue its neighbors, which creates a form of local maxima, hence increasing the sensory perception in that area. So, the LRN layer is useful when we are dealing with ReLU neurons because the unbounded activations allow neurons to have large values everywhere. We want to detect high-frequency features with a large response, which can be done by normalizing around the local neighborhood of the excited neuron. There are two types of normalizations:
+- 1. Normalization within the same channel: apply a 2D neighborhood of dimension N x N to normalize all values within, where N is the size of the normalization window
+  2. Normalization across channels: apply a 3D neighborhood of dimension N x 1 x 1 to normalize all values within, where 1 x 1 is refers to a single value in a 2D matrix
+  
 ## Key Achievements
 - Proposed a network of increasing depth using an architecture with very small receptive field (= convolution filter): 3 x 3
     - A stack of very small conv. layer (without spatial pooling in between) has an effective receptive field of a large conv. layer (ex. A stack of two 3 x 3 = receptive field of 5 x 5, three 3 x 3 = receptive field of 7 x 7)
