@@ -23,7 +23,7 @@ P.S.2. Local Response Normalization (LRN)[1] is not used as it increases memory 
     - A stack of very small conv. layer (without spatial pooling in between) has the same effective receptive field as a large conv. layer (ex. A stack of two 3 x 3 = receptive field of 5 x 5, three 3 x 3 = receptive field of 7 x 7)
     - With more rectification layers instead of a single one, the decision function becomes more discriminative
     - Decreased the number of parameters at the convolutional layers while maintaining the same performance (but it exploded in the fully connected layers)
-        - three 3 x 3 has 3(3<sup>2</sup>C<sup>2</sup>) = 27C<sup>2</sup> weights
+        - three 3 x 3 has 3(3<sup>2</sup>C) = 27C weights
         - one 7 x 7 has 7<sup>2</sup>C = 49C weights
 
 ## Pros & Cons
