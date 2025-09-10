@@ -20,7 +20,7 @@ P.S.2. Local Response Normalization (LRN)[1] is not used as it increases memory 
   
 ## Key Achievements
 - Proposed a network of increasing depth using an architecture with very small receptive field (= convolution filter): 3 x 3
-    - A stack of very small conv. layer (without spatial pooling in between) has the same effective receptive field of a large conv. layer (ex. A stack of two 3 x 3 = receptive field of 5 x 5, three 3 x 3 = receptive field of 7 x 7)
+    - A stack of very small conv. layer (without spatial pooling in between) has the same effective receptive field as a large conv. layer (ex. A stack of two 3 x 3 = receptive field of 5 x 5, three 3 x 3 = receptive field of 7 x 7)
     - With more rectification layers instead of a single one, the decision function becomes more discriminative
     - Decreased the number of parameters at the convolutional layers while maintaining the same performance (but it exploded in the fully connected layers)
         - three 3 x 3 has 3(3<sup>2</sup>C<sup>2</sup>) = 27C<sup>2</sup> weights
@@ -29,15 +29,17 @@ P.S.2. Local Response Normalization (LRN)[1] is not used as it increases memory 
 ## Pros & Cons
 
 Pros
-- Deeper depth improves accuracy
+- Deeper depth with very small convolutional filters improves accuracy
 - Simple design
 
 Cons
-- Very slow to train due to its high number of parameters
-- takes up a lot of disk space and bandwidth due to its high number of weights/parameters
+- Very slow to train (the original model was trained on the NVIDIA Titan GPU for 2-3 weeks) due to its high number of parameters
+- takes up a lot of disk space (528 MB) and bandwidth due to its high number of weights/parameters
 - potential exploding gradient problem due to its high number of parameters
 
 ## When to use
+
+VGG is no longer SOTA, but it's still a reliable model in small/medium dataset tasks in transfer learning due to its interpretability and reproducibility
 
 ## Implementation
 - Framework: 
