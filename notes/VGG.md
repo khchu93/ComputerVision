@@ -12,9 +12,9 @@ Max pool is performed over a 2 x 2 pixel window, with a stride of 2.
 Number of parameters: over 138 million
 
 P.S.1. VGG stands for Visual Geometry Group.
-P.S.2. Local Response Normalization (LRN)[1] is not used as it increases memory usage and training time without increasing overall accuracy.
+P.S.2. Local Response Normalization (LRN)<sup>[1]</sup> is not used as it increases memory usage and training time without increasing overall accuracy.
 
-[[1]](https://prateekvjoshi.com/2016/04/05/what-is-local-response-normalization-in-convolutional-neural-networks/) Local Response Normalization (LRN) layer is a method that mimics a neurobiology concept called "lateral inhibition". This refers to the capacity of an excited neuron to subdue its neighbors, which creates a form of local maxima, hence increasing the sensory perception in that area. So, the LRN layer is useful when we are dealing with ReLU neurons because the unbounded activations allow neurons to have large values everywhere. We want to detect high-frequency features with a large response, which can be done by normalizing around the local neighborhood of the excited neuron. There are two types of normalizations:
+[<sup>[1]</sup>](https://prateekvjoshi.com/2016/04/05/what-is-local-response-normalization-in-convolutional-neural-networks/) Local Response Normalization (LRN) layer is a method that mimics a neurobiology concept called "lateral inhibition". This refers to the capacity of an excited neuron to subdue its neighbors, which creates a form of local maxima, hence increasing the sensory perception in that area. So, the LRN layer is useful when we are dealing with ReLU neurons because the unbounded activations allow neurons to have large values everywhere. We want to detect high-frequency features with a large response, which can be done by normalizing around the local neighborhood of the excited neuron. There are two types of normalizations:
 - 1. Normalization within the same channel: apply a 2D neighborhood of dimension N x N to normalize all values within, where N is the size of the normalization window
   2. Normalization across channels: apply a 3D neighborhood of dimension N x 1 x 1 to normalize all values within, where 1 x 1 is refers to a single value in a 2D matrix
   
@@ -40,10 +40,10 @@ Cons
 ## When to use
 
 - VGG is no longer SOTA, but it's still a reliable model in small/medium dataset tasks in transfer learning and feature extraction due to its interpretability and reproducibility
-- Use for perceptual features [2]
+- Use for perceptual features <sup>[2]</sup>
 - Educational purposes
 
-[2] Perceptual features: a type of feature that, instead of comparing images pixel by pixel (which humans don’t do), captures how humans perceive similarity — in terms of content, texture, and style.
+<sup>[2]</sup> Perceptual features: a type of feature that, instead of comparing images pixel by pixel (which humans don’t do), captures how humans perceive similarity — in terms of content, texture, and style.
 - A pixel-level loss (like MSE) punishes even tiny shifts (e.g., moving an object 1 pixel to the right = huge error).
 - But perceptually, the two images look the same.
 - 
