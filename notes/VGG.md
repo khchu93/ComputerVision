@@ -39,8 +39,19 @@ Cons
 
 ## When to use
 
-VGG is no longer SOTA, but it's still a reliable model in small/medium dataset tasks in transfer learning due to its interpretability and reproducibility
+- VGG is no longer SOTA, but it's still a reliable model in small/medium dataset tasks in transfer learning and feature extraction due to its interpretability and reproducibility
+- Use for perceptual features [2]
+- Educational purposes
 
+[2] Perceptual features: a type of feature that, instead of comparing images pixel by pixel (which humans don’t do), captures how humans perceive similarity — in terms of content, texture, and style.
+- A pixel-level loss (like MSE) punishes even tiny shifts (e.g., moving an object 1 pixel to the right = huge error).
+- But perceptually, the two images look the same.
+- 
+## When NOT to
+
+- Train from scratch on large datasets because it will take too much time to train for an accuracy that is inferior to modern networks
+- Deploy to edge devices or mobile
+  
 ## Implementation
 - Framework: 
 - Dataset: 
