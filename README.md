@@ -11,7 +11,7 @@ This repo is my personal journey of mastering essential CV models by: <br />
 CNN-based Models
 - [AlexNet](https://github.com/khchu93/ComputerVision/blob/main/notes/AlexNet.md)
 - [VGG](https://github.com/khchu93/ComputerVision/blob/main/notes/VGG.md)
-- ResNet (TBD)
+- [ResNet](https://github.com/khchu93/ComputerVision/blob/main/notes/ResNet.md)
 - GoogleNet (TBD)
 - R-CNN (TBD)
 - Fast R-CNN (TBD)
