@@ -17,9 +17,11 @@ P.S. ResNet stands for Residual Network
           - Is it a vanishing gradient problem? No, since the added layers did nothing but pass forward the input.
           - Is it an overfitting issue? No, because both training and testing errors are terrible.
           - Hence, the author concluded that this issue was caused by the optimization difficulty in learning identity mappings.
-- To solve this optimization difficulty issue, the authors invented the residual learning <sup>[1]</sup>.
+- To solve this optimization difficulty issue, the authors introduced the residual blocks <sup>[1]</sup>.
 
-<sup>[1]</sup> Residual learning (= skip connections): 
+<sup>[1]</sup> Residual blocks: the practical unit (layers + skip connection<sup>[2]</sup> packaged together).
+<sup>[2]</sup> Skip connection: the direct connection that “skips over” some layers and adds the input back to the output of those layers.
+
 ## Pros & Cons
 
 Pros
