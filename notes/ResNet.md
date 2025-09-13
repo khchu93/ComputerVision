@@ -66,6 +66,6 @@ Examples:
 -->
 
 ## References
-[Deep Residual Learning for Image Recognition](https://arxiv.org/pdf/1512.03385)
+[Deep Residual Learning for Image Recognition](https://arxiv.org/pdf/1512.03385) <br>
 [Deep Learning Architectures Explained: ResNet, InceptionV3, SqueezeNet](https://www.digitalocean.com/community/tutorials/popular-deep-learning-architectures-resnet-inceptionv3-squeezenet)
 
