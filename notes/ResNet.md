@@ -3,7 +3,7 @@
 ## Architecture
 ![alt text](https://github.com/khchu93/NoteImage/blob/main/resnet.jpg?raw=true) <br>
 
-The ResNet34 uses a 34-layer plain network architecture inspired by VGG-19 in which the shortcut connection is added. It uses a convolutional filter of 7 x 7 with a stride of 2 at the first layer for a larger receptive field at the start, then switches to a 3 x 3 filter with a stride of 1 for the remaining convolutional layers. The number of fully connected layers is also reduced from 3 to 1 with the help of the global average pooling layer<sup>[4]</sup> right before the fully connected layer.
+The ResNet34 uses a 34-layer plain network architecture inspired by VGG-19 in which the shortcut connection is added. It uses a convolutional filter of 7 x 7 with a stride of 2 at the first layer for a larger receptive field at the start, then switches to a 3 x 3 filter with a stride of 1 for the remaining convolutional layers. The number of fully connected layers is also reduced from 3 to 1 with the help of the global average pooling layer<sup>[4]</sup> right before the fully connected layer. A shortcut connection is added that turns the network into its counterpart residual version. This shortcut connection performs identity mapping, with extra zero entries padded for increasing dimensions.
 
 
 ![alt text](https://github.com/khchu93/NoteImage/blob/main/res.png?raw=true) <br>
