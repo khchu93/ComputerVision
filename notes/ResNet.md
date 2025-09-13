@@ -7,7 +7,7 @@ The ResNet34 uses a 34-layer plain network architecture inspired by VGG-19 in wh
 
 
 ![alt text](https://github.com/khchu93/NoteImage/blob/main/res.png?raw=true) <br>
-The authors also proposed different depths of ResNet from 18, 34, 50, 101, and 152 layers.
+The authors also proposed different depths of ResNet from 18, 34, 50, 101, to 152 layers.
 
 P.S. ResNet stands for Residual Network
 
