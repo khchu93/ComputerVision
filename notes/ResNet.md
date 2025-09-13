@@ -12,7 +12,7 @@ The authors also proposed different depths of ResNet from 18, 34, 50, 101, and 1
 P.S. ResNet stands for Residual Network
 
 ## Key Achievements
-- Enabled training of **extremely deep neural networks** (up to 152 layers at the time) by introducing **Residual learning**<sup>[1]</sup>, which fixed the vanishing/exploding gradients problem.
+- Enabled training of **extremely deep neural networks** (up to 152 layers at the time) by introducing **Residual learning**<sup>[1]</sup>, which prevents the degradation problem.
 - Proof that the degradation problems of previous deep neural networks are not caused by overfitting or by vanishing/exploding gradients, but by optimization difficulty.
     - With simple network + identity-mapping layers (which should simply pass the input forward)
       - Theory: The deeper network should be **at least as good** as the shallow one, because the added layers only pass forward the input.
@@ -22,6 +22,7 @@ P.S. ResNet stands for Residual Network
           - Is it an **overfitting** issue? No, because both training and testing errors are terrible.
           - Hence, the author concluded that this issue was caused by the **optimization difficulty** in learning identity mappings.
 - To solve this optimization difficulty issue, the authors introduced the **residual blocks** <sup>[2]</sup> with the use of **skip connection** <sup>[3]</sup>.
+- Used of Global Average Pooling <sup>[4]</sup> to reduce the number of fully connected layers
 
 <img src="https://github.com/khchu93/NoteImage/blob/main/skipConnection.png?raw=true" alt="Skip Connection" width="500"/> <br>
 
