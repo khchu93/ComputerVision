@@ -23,7 +23,7 @@ P.S. ResNet stands for Residual Network
           - Hence, the author concluded that this issue was caused by the **optimization difficulty** in learning identity mappings.
 - To solve this optimization difficulty issue, the authors introduced the **residual blocks** <sup>[2]</sup> with the use of **skip connection** <sup>[3]</sup>.
 - Used of **Global Average Pooling** <sup>[4]</sup> to reduce the number of fully connected layers
-- Proposed a **bottlenect design** <sup>[5]</sup> for deeper models (>= 50 layers) inside each residual block to reduce FLOPs and parameters used
+- Proposed a **bottleneck design** <sup>[5]</sup> for deeper models (>= 50 layers) inside each residual block to reduce FLOPs and parameters used
 
 <img src="https://github.com/khchu93/NoteImage/blob/main/skipConnection.png?raw=true" alt="Skip Connection" width="500"/> <br>
 
