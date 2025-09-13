@@ -12,7 +12,7 @@ The authors also proposed different depths of ResNet from 18, 34, 50, 101, and 1
 P.S. ResNet stands for Residual Network
 
 ## Key Achievements
-- Enabled training of **extremely deep neural networks** (up to 152 layers at the time) by introducing **Residual learning**<sup>[1]</sup>, which prevents the degradation problem.
+- Enabled training of **extremely deep neural networks** (up to 152 layers at the time) by introducing **Residual learning**<sup>[1]</sup>, which prevents the **degradation problem**.
 - Proof that the degradation problems of previous deep neural networks are not caused by overfitting or by vanishing/exploding gradients, but by optimization difficulty.
     - With simple network + identity-mapping layers (which should simply pass the input forward)
       - Theory: The deeper network should be **at least as good** as the shallow one, because the added layers only pass forward the input.
@@ -22,7 +22,8 @@ P.S. ResNet stands for Residual Network
           - Is it an **overfitting** issue? No, because both training and testing errors are terrible.
           - Hence, the author concluded that this issue was caused by the **optimization difficulty** in learning identity mappings.
 - To solve this optimization difficulty issue, the authors introduced the **residual blocks** <sup>[2]</sup> with the use of **skip connection** <sup>[3]</sup>.
-- Used of Global Average Pooling <sup>[4]</sup> to reduce the number of fully connected layers
+- Used of **Global Average Pooling** <sup>[4]</sup> to reduce the number of fully connected layers
+- Proposed a **bottlenect design** <sup>[5]</sup> for deeper models (>= 50 layers) inside each residual block to reduce FLOPs and parameters used
 
 <img src="https://github.com/khchu93/NoteImage/blob/main/skipConnection.png?raw=true" alt="Skip Connection" width="500"/> <br>
 
@@ -33,8 +34,13 @@ And in practice, they often perform better, because extra layers can learn usefu
 <sup>[2]</sup> Residual blocks $\frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} \Big( \frac{\partial F(x)}{\partial x} + I \Big)$
 : the practical unit (layers + skip connection<sup>[3]</sup> packaged together). <br>
 <sup>[3]</sup> Skip connection: the direct connection that “skips over” some layers and adds the input back to the output of those layers. <br>
-<sup>[4]</sup> Global Average Pooling (GAP): a pooling layer that reduces each feature map to a single number by averaging over its spatial dimensions.
-- H x W x C -> 1 x 1 x C (one value per channel), where H = height, W = width, C = number of channels
+<sup>[4]</sup> Global Average Pooling (GAP): a pooling layer that reduces each feature map to a single number by averaging over its spatial dimensions. <br>
+- H x W x C -> 1 x 1 x C (one value per channel), where H = height, W = width, C = number of channels <br>
+
+<sup>[5]</sup> Bottleneck design: Uses **1×1 convolutions** to reduce and expand channel dimensions around a 3×3 convolution, making deep networks computationally efficient (Same depth but fewer FLOPs and parameters compared to stacking plain 3×3 layers.).
+- 1 × 1 conv → reduce channels (compression)
+- 3 × 3 conv → process features
+- 1 × 1 conv → restore channels (expansion)
 
 ## Pros & Cons
 
