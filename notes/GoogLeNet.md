@@ -48,7 +48,11 @@ Cons
 
 ## When to use
 - Large scale image classification where efficiency matters
-- 
+- When you want multi-scale feature extraction without exploding parameters
+
+## When NOT to use
+- Precise spatial localization (ex. segmentation)
+- Extremely deep networks (>50–100 layers) — ResNet is easier to train
 
 ## Implementation
 - Framework: 
