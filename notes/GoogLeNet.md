@@ -69,5 +69,5 @@ Examples:
 -->
 
 ## References
-[Going Deeper with Convolutions](https://arxiv.org/abs/1409.4842)
+[Going Deeper with Convolutions](https://arxiv.org/abs/1409.4842) <br>
 [GoogLeNet: A Deep Dive into Google’s Neural Network Technology](https://medium.com/@siddheshb008/googlenet-a-deep-dive-into-googles-neural-network-technology-f588d1b49e55)
