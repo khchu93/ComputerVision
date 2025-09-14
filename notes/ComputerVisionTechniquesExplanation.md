@@ -15,3 +15,7 @@ Dying ReLU:
 - Solution:
   1. Lower learning rate: Reduces the chance of large jumps into the dead zone.
   2. Other activation functions like Leaky ReLU
+ 
+Convolutional layer
+- A convolution (especially 1×1) learns how to re-weight and recombine the input channels, emphasizing the useful features and suppressing the irrelevant ones.
+- A standard convolution (including 1×1), each filter always spans all input channels at the same time.
