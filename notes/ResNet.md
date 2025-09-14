@@ -30,11 +30,11 @@ P.S. ResNet stands for Residual Network
 **Skip connections** ensure that training deep networks won’t get worse than shallow ones due to optimization difficulty. Even when **the gradient $\frac{\partial F(x)}{\partial x}$ becomes very small, the identity term $I$ ensures gradients never vanish completely**. This will ensure a deeper model will perform at least as good as a shallower model.
 And in practice, they often perform better, because extra layers can learn useful residuals on top of the identity <br> 
 
-<sup>[1]</sup> Residual learning: a concept that **learn the residual (difference) from the identity instead of the full mapping directly**, which is more difficult to learn. <br>
-<sup>[2]</sup> Residual blocks $\frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} \Big( \frac{\partial F(x)}{\partial x} + I \Big)$
+<sup>[1]</sup> **Residual learning**: a concept that **learn the residual (difference) from the identity instead of the full mapping directly**, which is more difficult to learn. <br>
+<sup>[2]</sup> **Residual blocks** $\frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} \Big( \frac{\partial F(x)}{\partial x} + I \Big)$
 : the practical unit (layers + skip connection<sup>[3]</sup> packaged together). <br>
-<sup>[3]</sup> Skip connection: the direct connection that “skips over” some layers and adds the input back to the output of those layers. <br>
-<sup>[4]</sup> Global Average Pooling (GAP): a pooling layer that reduces each feature map to a single number by averaging over its spatial dimensions. <br>
+<sup>[3]</sup> **Skip connection**: the direct connection that “skips over” some layers and adds the input back to the output of those layers. <br>
+<sup>[4]</sup> **Global Average Pooling (GAP)**: an average pooling layer that reduces each feature map to a single number by averaging over its spatial dimensions. <br>
 - H x W x C -> 1 x 1 x C (one value per channel), where H = height, W = width, C = number of channels <br>
 
 <sup>[5]</sup> Bottleneck design: Uses **1×1 convolutions** to reduce and expand channel dimensions around a 3×3 convolution, making deep networks computationally efficient (Same depth but fewer FLOPs and parameters compared to stacking plain 3×3 layers.).
