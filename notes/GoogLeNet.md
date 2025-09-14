@@ -8,7 +8,7 @@
 
 
 ## Key Achievements
-- Introduced **Inception Module**<sup>[1]</sup> with learnable filters to handle multiple scales to **deal with the vanishing gradient (multi scales) and the explosion in computational requirements problem (dimension reduction)**.
+- Introduced **Inception Module**<sup>[1]</sup> with learnable filters to handle multiple scales to **deal with the vanishing gradient (multi scales) and the explosion in computational requirements problem (dimension reductions)**.
 - Used of **1 x 1 Convolution** as a dimension reduction module to **remove computational bottlenecks and also the depth of the networks** without a significant performance penalty
 - Applied **[Global average pooling](https://github.com/khchu93/ComputerVision/blob/main/notes/ResNet.md?plain=1)** to **reduce the total number of parameters and to minimize overfitting**.
 - Applied **auxiliary classifiers**<sup>[2]</sup> only during training to **mitigate the vanishing gradient problem**.
@@ -19,7 +19,7 @@
   2. **3 x 3 convolution**: capture medium-range spatial patterns
   3. **5 x 5 convolution**: capture large-range spatial patterns
   4. **Max pooling**: provides translation invariance and reduces sensitivity to exact position
-  5. (Optional) **Extra 1 x 1 convolution** can be added to **reduce the increased computations**
+  5. (Optional) **Extra 1 x 1 convolution** (with dimension reduction) can be added to **reduce the increased computations**
 <img src="https://github.com/khchu93/NoteImage/blob/main/inceptionNaive.webp?raw=true" alt="Inception Naive" width="600"/> <br>
 <img src="https://github.com/khchu93/NoteImage/blob/main/inceptionDimentionReduc.webp?raw=true" alt="Inception Dimention Reduction" width="600"/> <br>
 
