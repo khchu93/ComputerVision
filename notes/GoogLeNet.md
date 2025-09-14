@@ -1,4 +1,4 @@
-# GoogLeNet
+# GoogLeNet (/Inception v1)
 
 ## Architecture
 ![alt text](https://github.com/khchu93/NoteImage/blob/main/googlenet.jpg?raw=true) <br>
