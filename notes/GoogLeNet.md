@@ -1,5 +1,15 @@
 # GoogLeNet (/Inception v1)
 
+## Motivation
+- The most straightforward way of improving the performance of deep neural networks is by increasing their size: the depth (number of layers) and the width (number of units at each level). However, this solution comes with 2 major drawbacks:
+- 1. Bigger size = Larger number of parameters = more prone to overfitting, especially if the number of labeled examples in the training set is limited
+  2. Increased size = dramatically increased use of computational resources = takes lots of time to train and deploy
+- The main hallmark of this GoogLeNet is the improved utilization of the computing resources inside the network by introducing the Inception architecture, designed to capture multi-scale features efficiently while keeping the parameter count small.
+  
+
+## What problem was the paper trying to solve?
+- 
+
 ## Architecture
 ![alt text](https://github.com/khchu93/NoteImage/blob/main/googlenet.jpg?raw=true) <br>
 
