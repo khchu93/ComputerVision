@@ -6,10 +6,6 @@
   2. Increased size = dramatically increased use of computational resources = takes lots of time to train and deploy
 - The main hallmark of this GoogLeNet is the improved utilization of the computing resources inside the network by introducing the Inception architecture, designed to capture multi-scale features efficiently while keeping the parameter count small.
   
-
-## What problem was the paper trying to solve?
-- 
-
 ## Architecture
 ![alt text](https://github.com/khchu93/NoteImage/blob/main/googlenet.jpg?raw=true) <br>
 
