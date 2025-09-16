@@ -27,14 +27,18 @@ Feature descriptor
 Invariance
 - The ability of the model or descriptor to “see through” transformations and still recognize the underlying structure or object as if it were the original image.
 
-HOG (Histogram of Oriented Gradients)
+[HOG](https://www.analyticsvidhya.com/blog/2019/09/feature-engineering-images-introduction-hog-feature-descriptor/) (Histogram of Oriented Gradients)
 - A feature descriptor that extracts the gradient orientation (magnitude + orientation) at each pixel of the input images.
 - 1. Magnitude = the size of the intensity change. The larger the change = the larger the intensity.
   2. Orientation = the direction of the change of pixel intensity = perpendicular to the edge and points toward brighter regions.
 - Steps
-- 1. Reshape the image into a size where the width and height can be divided by the selected cell size (e.g. 8 x 8, 16 x 16 cell)
+- 1. Reshape the image into a size where the width and height can be divided by the selected cell size (e.g. 8 x 8, 16 x 16 pixels)
   2. Calculate the magnitude and orientation for each pixel with the immediate neighbor or 3 x 3 sobel operator.
   - 1. Immediate neighbor: Gx = (x+1, y) - (x-1, y), Gy = (x, y+1) - (x, y-1), magnitude = sqrt(Gx<sup>2</sup>, Gy<sup>2</sup>), orientation = atan(Gy/Gx)
     2. Sobel: Gx kernel: [-1 0 1; -2 0 2; -1 0 1], Gy kernel: [-1 -2 -1; 0 0 0; 1 2 1], Gx = pixel window x Gx kernel, Gy = pixel window x Gy kernel, magnitude = ...
-  3. Calculate the histogram of gradients in the selected cell size (e.g. 8 x 8 cell) with a bin size of 20 (0°–180° split into 9 bins)
-  4. 
+  3. Divide image into cells: small, connected regions (e.g., 8 x 8 pixels)
+  4. Calculate the histogram of gradients in the selected cell size (e.g., 8 x 8 pixels) with a bin size of 20 (0°–180° split into 9 bins, only up to 180° because the direction doesn't matter): 8 x 8 inputs => 9 x 1 inputs
+  - There are multiple ways to do it, a simple way would be to sum up the magnitude of gradients that fall into the same bin.
+  5. Normalize across blocks (with block of cells varying from 2 x 2 cells (= 16 x 16 pixels) to larger) and slide through the image with step of 1, to reduce the lighting variation from the image that affects the gradient of the image
+  - There are multiple ways to do it, a simple way would be to divide each of these values by the square root of the sum of squares of the values.
+  6. Concatenate all block vectors and flatten them into one long **HOG feature vector**.
