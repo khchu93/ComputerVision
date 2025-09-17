@@ -21,16 +21,21 @@ Convolutional layer
 - A standard convolution (including 1×1), each filter always spans all input channels at the same time.
 
 Feature descriptor
-- Encode local image information into a compact, distinctive, and invariant representation, so we can reliably match or recognize objects across different scenes.
-- Feature descriptors are used to reduce the data to process and to achieve invariance (scale, rotation, illumination, and viewpoint invariances).
+- Encode local image information into a **compact, distinctive, and invariant representation**, so we can reliably match or **recognize objects across different scenes**.
+- Feature descriptors are used to **reduce the data to process** and to **achieve invariance** (scale, rotation, illumination, and viewpoint invariances).
 
 Invariance
-- The ability of the model or descriptor to “see through” transformations and still recognize the underlying structure or object as if it were the original image.
+- The ability of the model or descriptor to **“see through” transformations** and still **recognize the underlying structure** or object as if it were the original image.
 
 [HOG](https://www.analyticsvidhya.com/blog/2019/09/feature-engineering-images-introduction-hog-feature-descriptor/) (Histogram of Oriented Gradients)
-- A feature descriptor that extracts the gradient orientation (magnitude + orientation) at each pixel of the input images.
+- A feature descriptor that extracts the **gradient orientation** (magnitude + orientation) at each pixel of the input images for image comparison
 - 1. Magnitude = the size of the intensity change. The larger the change = the larger the intensity.
   2. Orientation = the direction of the change of pixel intensity = perpendicular to the edge and points toward brighter regions.
+- When to use
+  - **Much faster and lighter** than SIFT/ORB/SURF
+  - When images don't vary too much in rotation or scale
+  - Works well when objects are roughly the same size and orientation
+  - Partially invariant to illumination (norm), translation (sliding block), and scale (if computed at multiple scales)
 - Steps
 - 1. Reshape the image into a size where the width and height can be divided by the selected cell size (e.g. 8 x 8, 16 x 16 pixels)
   2. Calculate the magnitude and orientation for each pixel with the immediate neighbor or 3 x 3 sobel operator.
@@ -42,3 +47,10 @@ Invariance
   5. Normalize across blocks (with block of cells varying from 2 x 2 cells (= 16 x 16 pixels) to larger) and slide through the image with step of 1, to reduce the lighting variation from the image that affects the gradient of the image
   - There are multiple ways to do it, a simple way would be to divide each of these values by the square root of the sum of squares of the values.
   6. Concatenate all block vectors and flatten them into one long **HOG feature vector**.
+
+[SIFT](https://www.analyticsvidhya.com/blog/2019/10/detailed-guide-powerful-sift-technique-image-matching-python/) (Scale Invariant Feature Transform) Algorithm
+- A feature detection algorithm that detects distinctive key points or features in an image that are robust to changes in scale, rotation, and affine transformation.
+- It works by identifying **keypoints** based on their **local intensity extrema** and computing **descriptors** that capture the local image information around those key points.
+
+Keypoints
+- Local features in an image that are scale & rotation invariants.
