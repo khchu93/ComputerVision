@@ -8,7 +8,7 @@
 
 The first convolutional layer has a convolution window[1] shape of 11 x 11, then in the second layer, it is reduced to 5 x 5, followed by 3 x 3 for the rest of the convolutional layers. Moreover, the first convolutional layer has a stride[2] of 4, then reduced to 1 for the rest of the convolutional layers. 
 
-The reason for using an 11 x 11 filter with stride 4 is to aggressively reduce the spatial size of the input, which in turn lowers the number of multiply-add operations, keeping the computational cost within a manageable range for the GPUs available at the time.
+The reason for using an 11 x 11 filter with stride 4 is to aggressively reduce the spatial size of the input (in exchange for loss of spatial precision early on), which in turn lowers the number of multiply-add operations, keeping the computational cost within a manageable range for the GPUs available at the time.
 
 AlexNet used dual GPUs because running all 96 filters in the first convolutional layer on a single GPU exceeded its memory capacity. To solve this, a channel-wise split was applied, with each GPU computing 48 feature maps. The outputs were then merged before the fully connected layers, allowing the classifier to see all extracted features.
 
