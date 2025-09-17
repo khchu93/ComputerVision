@@ -13,6 +13,10 @@
     - Leaky ReLU: fixed dying ReLU, but possibly reduces the "sparse activation" regularization effect of ReLU
 
 - Feature descriptor (feature extraction technique)
-    - [HOG](https://www.analyticsvidhya.com/blog/2019/09/feature-engineering-images-introduction-hog-feature-descriptor/) (Histogram of oriented gradients): a feature descriptor that produces a histogram of gradient directions in an image
-    - SIFT (TBD)
+    - [HOG](https://www.analyticsvidhya.com/blog/2019/09/feature-engineering-images-introduction-hog-feature-descriptor/) (Histogram of oriented gradients)
+    - [SIFT](https://www.analyticsvidhya.com/blog/2019/10/detailed-guide-powerful-sift-technique-image-matching-python/)  (Scale Invariant Feature Transform) Algorithm
+    -  - DoG (difference of Gaussian)
+       - Gaussian blur
+       - Octave
+       - Descriptor
     - SURF
