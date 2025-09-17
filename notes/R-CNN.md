@@ -2,8 +2,10 @@
 # 
 
 ## Motivation
+- 
 
 ## Architecture
+![alt text](https://github.com/khchu93/NoteImage/blob/main/rcnn.png?raw=true) <br>
 
 ## Key Achievements
 - 
