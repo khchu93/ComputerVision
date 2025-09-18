@@ -93,3 +93,9 @@ DoG (difference of Gaussian)
 
 Descriptor
 - a vector describing local patch around a keypoint, designed so that it’s distinctive, compact, and robust for matching or recognition.
+
+ConvNet
+- general term (any CNN architecture)
+
+Backbone
+- the specific CNN used (e.g., AlexNet, VGG, ResNet)
