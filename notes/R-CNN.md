@@ -54,6 +54,9 @@ Cons
 - Not end-to-end: it involves separate modules for region proposal and classification, which can lead to suboptimal performance compared to models that optimize both tasks jointly
 
 ## When to use
+- Educational purpose
+- Object detection
+- Baseline model
 
 ## Implementation
 - Framework: 
