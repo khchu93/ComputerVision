@@ -75,3 +75,4 @@ Examples:
 ## References
 [What is R-CNN?](https://blog.roboflow.com/what-is-r-cnn/)
 [Rich feature hierarchies for accurate object detection and semantic segmentation Tech report (v5)](https://arxiv.org/pdf/1311.2524)
+[R-CNN Explained by A.J](https://medium.com/@jesse419419/r-cnn-explained-by-a-j-9e4d1820a010)
