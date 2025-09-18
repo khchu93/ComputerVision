@@ -51,7 +51,7 @@ Pros
 Cons
 - Computational complexity: lots of steps, and it can be slow and resource-demanding
 - Slow inference: due to the sequential processing of region proposals
-- Not end-to-end/complex: it involves separate modules for region proposal and classification, which can lead to suboptimal performance compared to models that optimize both tasks jointly
+- Not an end-to-end model: it has to first fine-tune a ConvNet on object proposals using log loss, then fit SVMs to ConvNet features, and lastly, learn the bounding box regressors
 
 ## When to use
 - Educational purpose
