@@ -22,6 +22,7 @@ Steps
      - Probability distribution over object classes + background
   2. Bounding box regressor (size = 4 x C)
      - 4 values (dx, dy, dw, dh) to refine/adjust the bounding-box positions
+5. Apply [non-maximum suppression (NMS)](https://github.com/khchu93/ComputerVision/blob/main/notes/R-CNN.md) to remove overlapped regions
 
 <sup>[1]</sup>Region of interest (ROI) pooling layer
 - Divide the bounding box region into a fixed output size grid of bins (e.g., 7×7)
