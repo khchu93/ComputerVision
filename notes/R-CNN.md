@@ -21,7 +21,8 @@
   3. Large convolutional neural network that extracts a fixed-length feature vector from each region
     - Expand the bounding box by a fixed pixel size (e.g., p=16) in all directions equally to include context
     - Reshape it to match the expected input size of the corresponding model (e.g., AlexNet 277 x 277 pixels, VGG 224 x 224 pixels) to use the pretrained weights.
-    - - Upsampling: Bilinear Interpolation, Downsampling: Interpolation
+    - - Upsampling: Bilinear Interpolation
+      - Downsampling: Interpolation
     - Pass through the selected model to extract a 4096-dimensional feature vector
   4. Set of class-specific linear SVMs
     - The extracted feature vectors are then fed into a separate machine learning classifier for each object class of interest. T-CNN typically uses SVMs for classification. For each class, a unique SVM is trained to determine whether or not the region proposal contains an instance of that class.
