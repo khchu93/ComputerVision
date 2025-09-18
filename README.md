@@ -14,7 +14,7 @@ CNN-based Models
 - [ResNet](https://github.com/khchu93/ComputerVision/blob/main/notes/ResNet.md)
 - [GoogleNet](https://github.com/khchu93/ComputerVision/blob/main/notes/GoogLeNet.md)
 - [R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/R-CNN.md)
-- Fast R-CNN (TBD)
+- [Fast R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/Fast%20R-CNN.md)
 - Faster R-CNN (TBD)
 - Mask R-CNN (TBD)
 
