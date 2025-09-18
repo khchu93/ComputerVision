@@ -49,7 +49,7 @@ Pros
 - Flexibility: By modifying the final layers of the network, you can tailor R-CNN to suit your specific needs
 
 Cons
-- Computational complexity: lots of steps, and it can be slow and resource-demanding
+- Computational complexity: the slowness comes from the sequential pipeline (ConvNet → SVM → bbox regression → NMS for each proposal)
 - Slow inference: due to the sequential processing of region proposals
 - Not an end-to-end model: it has to first fine-tune a ConvNet on object proposals using log loss, then fit SVMs to ConvNet features, and lastly, learn the bounding box regressors
 
