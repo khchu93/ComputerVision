@@ -51,7 +51,7 @@ Pros
 Cons
 - Computational complexity: lots of steps, and it can be slow and resource-demanding
 - Slow inference: due to the sequential processing of region proposals
-- Not end-to-end: it involves separate modules for region proposal and classification, which can lead to suboptimal performance compared to models that optimize both tasks jointly
+- Not end-to-end/complex: it involves separate modules for region proposal and classification, which can lead to suboptimal performance compared to models that optimize both tasks jointly
 
 ## When to use
 - Educational purpose
@@ -73,3 +73,5 @@ Examples:
 -->
 
 ## References
+[What is R-CNN?](https://blog.roboflow.com/what-is-r-cnn/)
+[Rich feature hierarchies for accurate object detection and semantic segmentation Tech report (v5)](https://arxiv.org/pdf/1311.2524)
