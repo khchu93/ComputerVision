@@ -13,7 +13,7 @@ CNN-based Models
 - [VGG](https://github.com/khchu93/ComputerVision/blob/main/notes/VGG.md)
 - [ResNet](https://github.com/khchu93/ComputerVision/blob/main/notes/ResNet.md)
 - [GoogleNet](https://github.com/khchu93/ComputerVision/blob/main/notes/GoogLeNet.md)
-- R-CNN (TBD)
+- [R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/R-CNN.md)
 - Fast R-CNN (TBD)
 - Faster R-CNN (TBD)
 - Mask R-CNN (TBD)
