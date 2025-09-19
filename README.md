@@ -15,7 +15,7 @@ CNN-based Models
 - [GoogleNet](https://github.com/khchu93/ComputerVision/blob/main/notes/GoogLeNet.md)
 - [R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/R-CNN.md)
 - [Fast R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/Fast%20R-CNN.md)
-- Faster R-CNN (TBD)
+- [Faster R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/Faster%20R-CNN.md)
 - Mask R-CNN (TBD)
 
 YOLO-based Models
