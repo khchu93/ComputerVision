@@ -56,5 +56,5 @@ Examples:
 -->
 
 ## References
-[Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/pdf/1506.01497)
+[Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/pdf/1506.01497) <br>
 [Faster R-CNN: Object Detection](https://medium.com/thedeephub/faster-r-cnn-object-detection-5dfe77104e31)
