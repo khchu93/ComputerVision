@@ -25,6 +25,9 @@ Transformer-based Models
 - Vision Transformer (TBD)
 - CLIP (TBD)
 
+SSMs-based Models
+- DAMamba (TBD)
+
 ## 📂 Repo Structure
 
 ```
