@@ -9,20 +9,24 @@ This repo is my personal journey of mastering essential CV models by: <br />
 
 ## 📚 Models Covered <br />
 CNN-based Models
-- [AlexNet](https://github.com/khchu93/ComputerVision/blob/main/notes/AlexNet.md)
-- [VGG](https://github.com/khchu93/ComputerVision/blob/main/notes/VGG.md)
-- [ResNet](https://github.com/khchu93/ComputerVision/blob/main/notes/ResNet.md)
-- [GoogleNet](https://github.com/khchu93/ComputerVision/blob/main/notes/GoogLeNet.md)
-- [R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/R-CNN.md)
-- [Fast R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/Fast%20R-CNN.md)
-- [Faster R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/Faster%20R-CNN.md)
+- U-Net (TBD)
 - Mask R-CNN (TBD)
+- [Faster R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/Faster%20R-CNN.md)
+- [Fast R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/Fast%20R-CNN.md)
+- [R-CNN](https://github.com/khchu93/ComputerVision/blob/main/notes/R-CNN.md)
+- [GoogleNet](https://github.com/khchu93/ComputerVision/blob/main/notes/GoogLeNet.md)
+- [ResNet](https://github.com/khchu93/ComputerVision/blob/main/notes/ResNet.md)
+- [VGG](https://github.com/khchu93/ComputerVision/blob/main/notes/VGG.md)
+- [AlexNet](https://github.com/khchu93/ComputerVision/blob/main/notes/AlexNet.md)
 
 YOLO-based Models
 - YOLOv8 (TBD)
+- YOLOv5 (TBD)
+- YOLOv1 (TBD)
 
 Transformer-based Models
-- Vision Transformer (TBD)
+- SAM(Segment Anything Model) (TBD)
+- ViT(Vision Transformer) (TBD)
 - CLIP (TBD)
 
 SSMs-based Models
