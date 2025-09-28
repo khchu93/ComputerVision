@@ -18,19 +18,19 @@
 - R-CNN consists of three modules
 - 1. Generates category-independent region proposals
     - Region proposal method: **Selective search**<sup>[1]</sup>
-  3. Large convolutional neural network that extracts a fixed-length feature vector from each region
+  2. Large convolutional neural network that extracts a fixed-length feature vector from each region
     - Expand the bounding box by a fixed pixel size (e.g., p=16) in all directions equally to include context
     - Reshape it to match the expected input size of the corresponding model (e.g., AlexNet 277 x 277 pixels, VGG 224 x 224 pixels) to use the pretrained weights.
     - - Upsampling: Bilinear Interpolation
       - Downsampling: Interpolation
     - Pass through the selected model to extract a 4096-dimensional feature vector
-  4. Set of class-specific linear SVMs
+  3. Set of class-specific linear SVMs
     - The extracted feature vectors are then fed into a separate machine learning classifier for each object class of interest. T-CNN typically uses SVMs for classification. For each class, a unique SVM is trained to determine whether or not the region proposal contains an instance of that class.
     - During training, positive samples are regions that contain an instance of the class. Negative samples are regions that do not.
-  5. Bounding box regression
+  4. Bounding box regression
     - To improve the localization of the detected objects, a bounding box regressor is used to refine the coordinates of the region proposals.
     - For each class, R-CNN learns a linear regression model that predicts a refined bounding box
-  6. Apply Non-Maximum Suppression (NMS)
+  5. Apply Non-Maximum Suppression (NMS)
     - Eliminate duplicate or highly overlapping bounding boxes
     - NMS ensures that only the most confident and non-overlapping bounding boxes are retained as final object detections by keeping the most confident box for each object and removing boxes that overlap too much with it (if IoU > threshold)
 
