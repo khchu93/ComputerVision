@@ -7,7 +7,7 @@
 - To solve this, the authors proposed Mask R-CNN, extending Faster R-CNN with a mask prediction branch to enable instance segmentation.
 
 ## Architecture
-![alt text](https://github.com/khchu93/NoteImage/blob/main/MaskedRCNN.PNG?raw=true)
+![alt text](?raw=true)
 
 
 
