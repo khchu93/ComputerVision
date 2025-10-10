@@ -18,7 +18,29 @@ The core proposals are:
 Mamba achieves state-of-the-art performance across several modalities (language, audio, genomics), demonstrating strong quality (matching Transformers twice its size on language modeling) and efficiency (linear scaling up to sequence length 1M).
 
 ## Architecture
+Mamba’s architecture replaces the Transformer’s attention-MLP stack with a unified, input-aware state space module that processes sequences in linear time. Instead of using fixed Linear Time-Invariant (LTI) dynamics like earlier SSMs, Mamba makes core parameters — such as the state update, input mapping, and output projection — dependent on the current token embedding, enabling selective information propagation and content-based reasoning. These selective SSM blocks are stacked in a homogeneous fashion and computed efficiently using a parallel scan algorithm, which replaces the quadratic cost of attention with linear-time recurrence while fully leveraging GPU memory hierarchy.
 
+Steps:
+1. Embed the Input
+   - The model starts by converting raw tokens (like words, bytes, or audio frames) into dense vectors using an embedding layer. This is necessary because the rest of the architecture works in continuous vector space rather than on raw IDs. After embedding, the tensor typically has shape (**batch, sequence length, hidden dimension**) — this becomes the main representation passed through the model.
+2. Set Up the Base State Space Dynamics
+   - Mamba builds on state space models, so it defines core components like:
+      - A: how hidden states evolve over time
+      - B: how input influences the state
+      - C: how the state is read back out
+      - Δ: a time-step factor
+    - These define how information flows along a sequence, similar to RNNs but more structured and efficient. They form the “skeleton” that all later processing depends on, and their dimensions must match the hidden/state sizes used throughout the model.
+3. Make Parameters Depend on the Input
+   - Unlike traditional LTI (Linear Time-Invariant) state space models where parameters are fixed, Mamba makes key parameters — $\Delta$, $\mathbf{B}$ and $\mathbf{C}$ — functions of the current token’s embedding. This means each position in a sequence can influence how the system updates and reads memory. It allows the model to be selective and context-aware, something older SSMs and RNNs struggled with. These input-conditioned parameters are produced via learned projections, so their shapes must align correctly across the batch and sequence.
+4. Filter and Retain Relevant Information
+   - As the model processes each token, it uses the input-conditioned parameters to decide what to keep, update, or ignore in the state. This acts like a content-aware gate that helps the model remember important parts of the sequence and skip irrelevant information. This replaces attention’s “focusing” ability without the quadratic cost and is crucial for working with long texts while avoiding noise.
+5. Process Sequences with a Fast Parallel Scan
+   - Once parameters are dynamic, Mamba can’t use the old convolution trick from earlier SSMs. Instead, it uses a hardware-friendly parallel scan algorithm to update states efficiently across the sequence. This keeps computation linear in sequence length — $O(L)$ — and enables up to 5× faster inference than Transformers, while scaling to sequences as long as 1 million tokens. This design also makes better use of GPU cache and memory.
+6. Replace Attention and MLP with a Unified Block
+   - Instead of alternating between attention layers and feedforward networks (like Transformers do), Mamba stacks a single type of block: a selective SSM layer plus a small projection (replacing the MLP). Residual connections and normalization keep training stable. This simplification removes the need for attention entirely while keeping the expressiveness needed for language and other dense data. Input and output shapes are preserved so multiple blocks can be stacked easily.
+7. Generate the Final Output
+   - These outputs let us measure performance directly against Transformers. In practice, Mamba matches or outperforms Transformer models that are twice its size, while being faster and handling longer context windows.
+   
 ## Key Achievements
 - 
 
