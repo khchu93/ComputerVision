@@ -15,12 +15,12 @@ Pros
 Cons
 -
 
+<!--
 ## Implementation
 - Framework: 
 - Dataset: 
 - Colab Notebook: [link]()
 
-<!--
 ## Results
 Training
 
