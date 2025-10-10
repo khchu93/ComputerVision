@@ -42,15 +42,21 @@ Steps:
    - These outputs let us measure performance directly against Transformers. In practice, Mamba matches or outperforms Transformer models that are twice its size, while being faster and handling longer context windows.
    
 ## Key Achievements
-- 
+- Introduced **Selective State Space Models (S6)** to replace traditional self-attention while retaining long-range dependency modeling.
+- Implemented **hardware-aware parallel scanning** to enable linear-time inference and training over long sequences.
+- Used **input-dependent parameter selection (selective gating)** to dynamically control which tokens influence the state transitions.
 
 ## Pros & Cons
 
 Pros
-- 
-
+- **Handles long sequences efficiently** using **continuous-time state space parameterization**, avoiding the quadratic complexity of self-attention.
+- **Memory-efficient** thanks to **convolution-parameterized state transition matrices**, allowing training on longer sequences with smaller GPUs.
+- **Faster inference** via **hardware-aware parallel scanning**, enabling real-time or large-scale applications.
+  
 Cons
--
+- **Complex implementation**: techniques like **selective gating** and **continuous-time SSMs** can be harder to understand and implement than standard attention layers.
+- **Limited community support** compared to Transformers; fewer pre-trained models and libraries available.
+- **Task-specific tuning required**: hyperparameters for SSMs (state dimension, step size, discretization method) significantly impact performance.
 
 <!--
 ## Implementation
