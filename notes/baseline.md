@@ -13,9 +13,7 @@ Pros
 - 
 
 Cons
-- 
-
-## When to use
+-
 
 ## Implementation
 - Framework: 
