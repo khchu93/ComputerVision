@@ -50,10 +50,15 @@ The expansive path is designed to combine low-resolution context information wit
 ## Pros & Cons
 
 Pros
-- 
-
+- Requires Very Few Annotated Images
+- Achieves Precise Segmentation
+- Fast and Applicable to Large Images
+  
 Cons
--
+- Requires Cropping Due to Border Loss
+- Requires Specialized Initialization
+  - Good initialization of weights is "extremely important" to prevent parts of the network from never contributing or giving excessive activations
+- Small Batch Size Requires High Momentum
 
 <!--
 ## Implementation
