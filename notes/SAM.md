@@ -67,3 +67,4 @@ Examples:
 -->
 
 ## References
+[Segment Anything](https://arxiv.org/pdf/2304.02643)
