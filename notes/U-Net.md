@@ -56,16 +56,25 @@ The expansive path is designed to **combine low-resolution context information w
 ## Pros & Cons
 
 Pros
-- Requires Very Few Annotated Images
-- Achieves Precise Segmentation
-- Fast and Applicable to Large Images
-  
-Cons
-- Requires Cropping Due to Border Loss
-- Requires Specialized Initialization
-  - Good initialization of weights is "extremely important" to prevent parts of the network from never contributing or giving excessive activations
-- Small Batch Size Requires High Momentum
+- Precise localization
+  - The **skip connections** between encoder and decoder allow the network to **combine high-resolution spatial features with deep semantic features**, producing accurate segmentation boundaries.
+- Works well with small datasets
+  - **Extensive data augmentation** helps prevent overfitting, making it effective with **small datasets**.
+- Fully convolutional
+  - **No fully connected layers** → **arbitrary input sizes** (with patch-based strategies) and **fewer parameters** compared to networks with FC layers.
+- Efficient feature reuse
+  - The symmetric architecture and skip connections allow **features learned in the encoder to be reused in the decoder**, improving learning efficiency.
 
+Cons
+- Fixed input size
+  - Standard U-Net is designed for **fixed-size inputs** (e.g., 512×512). Images of different sizes must be **resized** or **patched**, which can introduce artifacts or extra preprocessing steps.
+- High memory usage
+  - U-Net has **many feature channels** and **skip connections**, which can consume a lot of GPU memory, especially for high-resolution images.
+- Limited receptive field
+  - U-Net has a **limited receptive field** and **fixed input size** (e.g., 512×512). For large images, **overlapping patches** can be processed and merged, but this still **limits the network’s ability to capture global context across the full image**.
+- Parameter-heavy
+  - Deep U-Nets contain around **31.3 million parameters**. **Adding an extra convolutional layer at the bottleneck** with 1024 channels adds roughly 9.4 million parameters, **increasing the model size by about 30%**. This larger size can lead to longer training times and a **higher risk of overfitting**, especially on small datasets.
+    
 <!--
 ## Implementation
 - Framework: 
