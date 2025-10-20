@@ -42,16 +42,16 @@ The expansive path is designed to **combine low-resolution context information w
     - At the ultimate layer, a  **convolution** is used to **map each multi-component feature vector (e.g., 64 components) to the desired number of classes**, thereby generating the final **pixel-wise segmentation map**.
 
 ## Key Achievements
-- Introduced a Symmetric U-Shaped Architecture with Feature Combination
-  - The architecture was modified and extended from the fully convolutional network, featuring a contracting path to capture context and a symmetric expanding path that enables precise localization through the concatenation of high-resolution feature maps from the contracting path with upsampled feature maps from the expansive path.
-- Enabled Seamless Segmentation via Overlap-Tile Strategy
-  - The network was designed without fully connected layers, using only the valid part of each convolution, which allows for the seamless segmentation of arbitrarily large images by employing an overlap-tile strategy that extrapolates missing context by mirroring the input image.
-- Implemented Strong Data Augmentation via Elastic Deformations
-  - To cope with limited training data, U-Net uses excessive data augmentation by applying random elastic deformations to the available training images, which is the key concept that allows the network to learn invariance to tissue deformations without needing to see these transformations in the annotated image corpus.
-- Proposed a Weighted Loss Function for Border Separation
-  - To address the challenge of separating touching objects of the same class, the authors proposed using a weighted loss function that introduces a pre-computed weight map, $w(x)$, to the cross-entropy loss, assigning a large weight to the background labels separating touching cells to force the network to learn these small separation borders.
-- Utilized Specialized Weight Initialization
-  - The network uses an initialization scheme where weights are drawn from a Gaussian distribution with a standard deviation of $\sqrt{\dfrac{2}{n}}$ (where $N$ is the number of incoming nodes of one neuron) to ensure that each feature map maintains approximately unit variance, preventing excessive or non-contributing network activations in deep architectures.
+- Introduced a **Symmetric U-Shaped Architecture** with Feature Combination
+  - The architecture was modified and extended from the fully convolutional network, featuring a **contracting path to capture context** and a **symmetric expanding path that enables precise localization** through the **concatenation of high-resolution feature maps** from the contracting path with upsampled feature maps from the expansive path.
+- Enabled **Seamless Segmentation** via **Overlap-Tile Strategy**
+  - The network was designed **without fully connected layers**, using only the valid part of each convolution, which allows for the seamless segmentation of **arbitrarily large images** by employing an **overlap-tile strategy**.
+- Implemented Strong **Data Augmentation** via **Elastic Deformations**
+  - To cope with limited training data, U-Net uses excessive data augmentation by **applying random elastic deformations** to the available training images, which is the key concept that allows the network to **learn invariance to tissue deformations** without needing to see these transformations in the annotated image corpus.
+- Proposed a **Weighted Loss Function** for **Border Separation**
+  - To address the challenge of separating touching objects of the same class, the authors proposed using a weighted loss function that **introduces a pre-computed weight map**, $w(x)$, to the cross-entropy loss, **assigning a large weight to the background labels** separating touching cells to force the network to learn these small separation borders.
+- Utilized **Specialized Weight Initialization**
+  - The network uses an initialization scheme where weights are **drawn from a Gaussian distribution** with a standard deviation of $\sqrt{\dfrac{2}{n}}$ (where $N$ is the number of incoming nodes of one neuron) to **ensure that each feature map maintains approximately unit variance**, preventing excessive or non-contributing network activations in deep architectures.
 
 ## Pros & Cons
 
