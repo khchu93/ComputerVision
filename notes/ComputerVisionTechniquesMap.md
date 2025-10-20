@@ -20,3 +20,11 @@
        - Octave
        - Descriptor
     - SURF
+ 
+- Problem
+  - Vanishing gradient
+  - Exploding gradient
+  - Internal covariate shift
+    - Normalization
+      - Batch Normalization
+      - Layer Normalization
