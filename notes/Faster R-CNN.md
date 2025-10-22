@@ -47,7 +47,7 @@ Cons
 - High Computational Cost: The RPN and detection head both process thousands of anchors, leading to heavy memory usage and longer training/inference time.
 - Anchor-Dependent: Performance relies on good anchor design (scales/aspect ratios). Poorly matched anchors can degrade detection accuracy.
 - Struggle with highly overlapping or crowded scenes: In dense scenes (e.g., pedestrians in a crowd), NMS often suppresses true positives that have high IoU overlap, keeping only one detection.
-- 
+
 <!--
 ## When to use
 
