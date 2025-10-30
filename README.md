@@ -7,7 +7,7 @@ A personal exploration of foundational Computer Vision Models (CV).
 - Rebuilt the models from scratch based on academic and open-source references.
 - Analyzed and compared results to deepen understanding and share practical insights.
 
-📘 Related project: [Large Language Models Journey](https://github.com/khchu93/LLMs/edit/main/README.md)
+📘 Related project: [Large Language Models Journey](https://github.com/khchu93/LLMs/blob/main/README.md)
 
 ### 📺 Projects
 | Tag | Name | Description
